@@ -65,7 +65,7 @@ Information for this request can be found here (note, the routes are for an earl
 https://code.tutsplus.com/tutorials/wp-rest-api-creating-updating-and-deleting-data--cms-24883
 ```
 $.ajax({
-        url: WPsettings.root + '/wp/v2/posts',
+        url: WPsettings.root + 'wp/v2/posts',
         method: 'POST',
         data: //something to send here
         beforeSend: function ( xhr ) {
@@ -81,7 +81,7 @@ $.ajax({
 I found $http requests to be a little trickier than just setting the request header, fortunately that can be fixed by creating a request object first:
 
 ```
-var postReqObj = {
+let postReqObj = {
       this.method = 'POST';
       this.url = WPsettings.root + 'wp/v2/posts';
       this.headers = {
